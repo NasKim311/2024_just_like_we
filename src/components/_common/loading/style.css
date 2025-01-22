@@ -1,0 +1,35 @@
+/* Loading Bar  css */
+.loading-container {
+    display: flex;
+    flex-direction: column; /* Flex 방향을 세로로 변경 */
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 57.2px; /* Adjust top offset */
+    left: 250px; /* Adjust based on the sidebar width */
+    width: calc(100% - 250px); /* Adjust based on the sidebar width */
+    height: calc(100% - 57.2px); /* Adjust height to exclude the top offset */
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: background overlay */
+    z-index: 9999; /* Make sure it's above other elements */
+}
+
+.loading-container-in-calendarView {
+    display: flex;
+    flex-direction: column; /* Flex 방향을 세로로 변경 */
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 57.2px; /* Adjust top offset */
+    left: 0; /* Adjust based on the sidebar width */
+    width: 100%; /* Adjust based on the sidebar width */
+    height: calc(100% - 57.2px); /* Adjust height to exclude the top offset */
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: background overlay */
+    z-index: 9999; /* Make sure it's above other elements */
+}
+
+.loading-message {
+    font-size: 16px;
+    color: #333;
+    margin-top: 20px; /* 로딩바와 텍스트 간격 */
+    text-align: center;
+}
