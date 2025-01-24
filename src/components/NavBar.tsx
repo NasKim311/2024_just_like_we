@@ -38,33 +38,35 @@ function NavBar() {
     /* ***************************************************************************************** */
     return (
         <>
-            <nav className="navbar">
-                <div className="navbar-left">
-                    <div className="logo-box">
-                        <NavLink to="/">
-                            <b>JustLikeWe</b>
-                        </NavLink>
-                    </div>
-                </div>
-                <div className="navbar-right">
-                    <div className="menu-btn">
-                        <div className="ani-btn">
-                            <NavLink to="#" onClick={onToggleSidebar}>
-                                {!params.isShowSidebar && (
-                                    <div className="open">
-                                        <img src={`${process.env.PUBLIC_URL}/assets/img/menu-button.png`} style={{ width: '75%', display: 'block', margin: 'auto' }} />
-                                    </div>
-                                )}
-                                {params.isShowSidebar && (
-                                    <div className="close" style={{ color: 'black' }}>
-                                        x
-                                    </div>
-                                )}
+            <header>
+                <nav className="navbar">
+                    <div className="navbar-left">
+                        <div className="logo-box">
+                            <NavLink to="/">
+                                <b>JustLikeWe</b>
                             </NavLink>
                         </div>
                     </div>
-                </div>
-            </nav>
+                    <div className="navbar-right">
+                        <div className="menu-btn">
+                            <div className="ani-btn">
+                                <NavLink to="#" onClick={onToggleSidebar}>
+                                    {!params.isShowSidebar && (
+                                        <div className="open">
+                                            <img src={`${process.env.PUBLIC_URL}/assets/img/menu-button.png`} style={{ width: '75%', display: 'block', margin: 'auto' }} />
+                                        </div>
+                                    )}
+                                    {params.isShowSidebar && (
+                                        <div className="close" style={{ color: 'black' }}>
+                                            x
+                                        </div>
+                                    )}
+                                </NavLink>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </header>
 
             {params.isShowSidebar && <SideBar />}
         </>
