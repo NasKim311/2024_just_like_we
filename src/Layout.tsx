@@ -3,13 +3,13 @@ import { Route, Routes } from 'react-router-dom';
 import { ProtectedRoute } from 'core/route.protected';
 import { PublicRoute } from 'core/route.public';
 
-// import Home from 'components/Home';
-// import NavBar from 'components/NavBar';
-// import SideBar from 'components/SideBar';
+import Home from 'components/Home';
+import NavBar from 'components/NavBar';
+import SideBar from 'components/SideBar';
 import NoPage from 'components/NoPage';
 import Loading from 'components/_common/loading/Loading';
 
-// const Dashboard = lazy(() => import(/* webpackChunkName: "DashboardComponent" */ './components/dashboard/Dashboard'));
+const Main = lazy(() => import(/* webpackChunkName: "MainComponent" */ './components/main/Main'));
 
 // const Login = lazy(() => {
 //     return Promise.all([import(/* webpackChunkName: "LoginComponent" */ './components/login/Login'), new Promise((resolve) => setTimeout(resolve, 1000))]).then(([moduleExports]) => moduleExports);
@@ -31,38 +31,36 @@ class Layout extends React.Component {
 
     public render() {
         return (
-            <div className="wrapper wrapper-list">
-                {/* <NavBar /> */}
+            <div className="">
+                <NavBar />
 
-                {/* <SideBar /> */}
-
-                <div className="content-wrapper px-4 py-2">
+                <div className="">
                     <Routes>
-                        {/* <Route path="/" element={<Home />}></Route> */}
+                        <Route path="/" element={<Home />}></Route>
 
-                        {/* <Route
-                            path="/login"
+                        <Route
+                            path="/main"
                             element={
                                 <PublicRoute>
                                     <React.Suspense fallback={<Loading />}>
-                                        <Login />
+                                        <Main />
                                     </React.Suspense>
                                 </PublicRoute>
                             }
-                        ></Route> */}
+                        ></Route>
 
                         {/* <Route
-                            path="/dashboard/*"
+                            path="/main/*"
                             element={
                                 <ProtectedRoute>
                                     <React.Suspense fallback={<Loading />}>
-                                        <Dashboard />
+                                        <Main />
                                     </React.Suspense>
                                 </ProtectedRoute>
                             }
                         ></Route> */}
 
-                        {/* <Route path="*" element={<NoPage />}></Route> */}
+                        <Route path="*" element={<NoPage />}></Route>
                     </Routes>
                 </div>
             </div>
